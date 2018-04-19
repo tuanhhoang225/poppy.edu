@@ -1,14 +1,15 @@
 <?php
 
 namespace backend\controllers;
-
+use common\models\Image;
 use Yii;
 use common\models\Teacher;
 use common\models\base\TeacherSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use common\helpers\FunctionHelper;
+use common\models\TeacherCourse;
 /**
  * TeacherController implements the CRUD actions for Teacher model.
  */
@@ -35,12 +36,10 @@ class TeacherController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new TeacherSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        $teachers = Teacher::find()->all();
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'teacher'=>$teachers,
         ]);
     }
 
@@ -66,8 +65,24 @@ class TeacherController extends Controller
     {
         $model = new Teacher();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->save()) {
+                foreach (json_decode($model->images) as $key => $value) {
+                    if ($key == 0) {
+                        $model->avatar = $value;
+                    }
+
+                    $img = new Image();
+                    $img->avatar = $value;
+                    $img->teacher_id = $model->id;
+                    $img->save();
+                }
+
+                $model->slug = FunctionHelper::slug($model->name) . '=' . $model->id;
+                $model->save();
+
+                return $this->redirect(['index']);
+            }
         }
 
         return $this->render('create', [

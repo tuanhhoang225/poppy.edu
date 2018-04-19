@@ -36,28 +36,31 @@ use yii\helpers\Url;
                     <h3 class="box-title"><?= Yii::t('app', 'Basic information') ?></h3>
                 </div>
                 <div class="box-body">
-                    <div class="form-group">
-                        <?= $form->field($model, 'name')->textInput() ?>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <?= $form->field($model, 'name')->textInput() ?>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
-
+                                <?= $form->field($model, 'phone')->textInput() ?>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
-
+                                <?= $form->field($model, 'address')->textInput() ?>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <?= $form->field($model, 'address')->textInput() ?>
                     </div>
                 </div>
             </div>
@@ -105,93 +108,43 @@ use yii\helpers\Url;
                         </div>
                     </div>
                     <div id="list-img" class="thumbnails ui-sortable">
-<!--                        --><?php //if (isset($images)): foreach ($images as $key => $value): ?>
-<!--                            <div class="file-preview-frame krajee-default  kv-preview-thumb">-->
-<!--                                <div class="kv-file-content">-->
-<!--                                    <img src="--><?//= $value['anh_chinh'] ?><!--" class="kv-preview-data file-preview-image">-->
-<!--                                </div>-->
-<!--                                <div class="file-thumbnail-footer">-->
-<!--                                    <div class="file-footer-caption" title="kitchen_adventurer_lemon.jpg">-->
-<!--                                        --><?//= $value['anh_chinh'] ?>
-<!--                                    </div>-->
-<!--                                    <div class="file-upload-indicator" title="Not uploaded yet">-->
-<!--                                        <i class="glyphicon glyphicon-hand-down text-warning"></i>-->
-<!--                                    </div>-->
-<!--                                    <div class="file-actions">-->
-<!--                                        <div class="file-footer-buttons">-->
-<!--                                            <button type="button" class="btn btn-xs btn-default"-->
-<!--                                                    onclick="deleteFile(event)">-->
-<!--                                                <i class="glyphicon glyphicon-trash"></i>-->
-<!--                                            </button>-->
-<!--                                        </div>-->
-<!--                                        <div class="clearfix"></div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        --><?php //endforeach; endif; ?>
+                        <?php if (isset($image)): foreach ($image as $key => $value): ?>
+                            <div class="file-preview-frame krajee-default  kv-preview-thumb">
+                                <div class="kv-file-content">
+                                    <img src="<?= $value['anh_chinh'] ?>" class="kv-preview-data file-preview-image">
+                                </div>
+                                <div class="file-thumbnail-footer">
+                                    <div class="file-footer-caption" title="kitchen_adventurer_lemon.jpg">
+                                        <?= $value['anh_chinh'] ?>
+                                    </div>
+                                    <div class="file-upload-indicator" title="Not uploaded yet">
+                                        <i class="glyphicon glyphicon-hand-down text-warning"></i>
+                                    </div>
+                                    <div class="file-actions">
+                                        <div class="file-footer-buttons">
+                                            <button type="button" class="btn btn-xs btn-default"
+                                                    onclick="deleteFile(event)">
+                                                <i class="glyphicon glyphicon-trash"></i>
+                                            </button>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; endif; ?>
                     </div>
                     <div class="spanButtonPlaceholder block-upload-item"
                          style="position: relative; overflow: hidden;margin: 10px;">
                         <p>(Click để tải ảnh<br> hoặc kéo thả ảnh vào đây)</p>
                         <input class="kv-file-drop-zone" multiple="multiple" type="file" name="file">
                     </div>
-                    <div class="droptext">Đăng ảnh thật nhanh bằng cách kéo và thả ảnh vào khung. Thay đổi vị trí của
-                        ảnh bằng cách kéo ảnh vào vị trí mà bạn muốn!
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="box box-success">
-                <div class="box-header">
-                    <h3 class="box-title">Liên hệ</h3>
-                </div>
-                <div class="box-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <?= $form->field($model, 'phone')->textInput() ?>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <?= $form->field($model, 'address')->textInput() ?>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-<!--    <div class="form-group">-->
-<!--        --><?//= $form->field($model, 'images')->hiddenInput(['id' => 'images'])->label(false) ?>
-<!--    </div>-->
-    <div class="form-group" style="margin-right: 10px;">
-        <?= Html::submitButton('<i class="fa fa-check"></i> ' . Yii::t('app', 'Submit'), ['class' => 'btn btn-primary pull-right', 'onclick' => 'getImages()',]) ?>
+    <div class="form-group">
+        <?= $form->field($model, 'images')->hiddenInput(['id' => 'images'])->label(false) ?>
     </div>
-    <?php ActiveForm::end(); ?>
-<!--    --><?php //$form = ActiveForm::begin(); ?>
-<!---->
-<!--    --><?//= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-<!---->
-<!--    --><?//= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
-<!---->
-<!--    --><?//= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
-<!---->
-<!--    --><?//= $form->field($model, 'total_courses')->textInput() ?>
-<!---->
-<!--    --><?//= $form->field($model, 'avatar')->textInput(['maxlength' => true]) ?>
-<!---->
-<!--    --><?//= $form->field($model, 'image')->textarea(['rows' => 6]) ?>
-<!---->
-<!--    --><?//= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
-<!---->
-<!--    --><?//= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
-<!---->
-<!--    <div class="form-group">-->
-<!--        --><?//= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
-<!--    </div>-->
-<!---->
-<!--    --><?php //ActiveForm::end(); ?>
 
+    <?php ActiveForm::end(); ?>
 </div>

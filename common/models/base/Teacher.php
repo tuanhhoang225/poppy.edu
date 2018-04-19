@@ -13,10 +13,13 @@ use Yii;
  * @property string $content
  * @property int $total_courses
  * @property string $avatar
- * @property string $image
+ * @property string $images
  * @property string $phone
  * @property string $address
+ * @property string $slug
+ * @property string $note
  *
+ * @property Image[] $images0
  * @property TeacherCourse[] $teacherCourses
  */
 class Teacher extends \yii\db\ActiveRecord
@@ -35,9 +38,9 @@ class Teacher extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['content', 'image'], 'string'],
+            [['content', 'images'], 'string'],
             [['total_courses'], 'integer'],
-            [['name', 'email', 'avatar', 'phone', 'address'], 'string', 'max' => 255],
+            [['name', 'email', 'avatar', 'phone', 'address', 'slug', 'note'], 'string', 'max' => 255],
         ];
     }
 
@@ -53,10 +56,20 @@ class Teacher extends \yii\db\ActiveRecord
             'content' => Yii::t('app', 'Content'),
             'total_courses' => Yii::t('app', 'Total Courses'),
             'avatar' => Yii::t('app', 'Avatar'),
-            'image' => Yii::t('app', 'Image'),
+            'images' => Yii::t('app', 'Images'),
             'phone' => Yii::t('app', 'Phone'),
             'address' => Yii::t('app', 'Address'),
+            'slug' => Yii::t('app', 'Slug'),
+            'note' => Yii::t('app', 'Note'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImages0()
+    {
+        return $this->hasMany(Image::className(), ['teacher_id' => 'id']);
     }
 
     /**

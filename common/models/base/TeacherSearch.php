@@ -19,7 +19,7 @@ class TeacherSearch extends Teacher
     {
         return [
             [['id', 'total_courses'], 'integer'],
-            [['name', 'email', 'content', 'avatar', 'image', 'phone', 'address'], 'safe'],
+            [['name', 'email', 'content', 'avatar', 'images', 'phone', 'address'], 'safe'],
         ];
     }
 
@@ -67,7 +67,7 @@ class TeacherSearch extends Teacher
             ->andFilterWhere(['like', 'email', $this->email])
             ->andFilterWhere(['like', 'content', $this->content])
             ->andFilterWhere(['like', 'avatar', $this->avatar])
-            ->andFilterWhere(['like', 'image', $this->image])
+            ->andFilterWhere(['like', 'images', $this->image])
             ->andFilterWhere(['like', 'phone', $this->phone])
             ->andFilterWhere(['like', 'address', $this->address]);
 
