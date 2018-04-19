@@ -1,0 +1,48 @@
+﻿/*Logo*/
+@media screen and (min-width:1366px){
+
+}
+@media screen and (min-width:1200px) and (max-width:1366px){
+
+}
+@media screen and (min-width:1025px) and (max-width:1199px){
+
+}
+@media screen and (min-width:921px) and (max-width:1024px){
+
+}
+@media screen and (min-width:800px) and (max-width:920px){
+
+}
+@media screen and (min-width:768px) and (max-width:799px){
+    .menu-mobile-icon {
+        top: 111px !important;
+    }
+}
+@media screen and (min-width:667px) and (max-width:767px){
+  
+  }
+@media screen and (min-width:568px) and (max-width:666px){
+   
+   }
+@media screen and (min-width:480px) and (max-width:567px){
+   }
+
+@media screen and (min-width:375px) and (max-width:479px){
+}
+@media screen and (min-width:361px) and (max-width:374px){
+   }
+@media screen and (min-width:321px) and (max-width:360px) {
+   }
+@media screen and (min-width:0px) and (max-width:320px) {
+  }
+@media screen and (max-width: 767px) and (min-width: 0px){
+        .header_wr,.header_wr .logo_wr {
+            height: 80px;
+            position:relative !important;
+            width:100% !important;
+        }
+        .header_wr .logo_wr{display:block; margin:0 auto;}
+        .header_wr img{position:absolute; top:0px; right:0px; left:0px; bottom:0px; margin: auto auto !important;max-width:210px;}
+        .menu-mobile-icon{right:0px !important;}
+}

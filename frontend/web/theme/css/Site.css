@@ -1,0 +1,15 @@
+﻿.Sitemap_fr { padding: 20px 30px; width: 91%; float: left; }
+.Sitemap_fr .site_left { width: 50%; float: left; }
+.Sitemap_fr .site_center { width: 50%; float: left; }
+.Sitemap_fr .RadTreeView_Sunset .rtHover .rtIn { font-size: 13px; font-family: arial; color: #5E5E5E; }
+
+/*Menu vung ben trai san pham*/
+.menu-content .RadMenu .rmSlide{ position:static !important;}
+
+.RadMenu_Left .rmGroup {
+    /* background: #f8f8f8; */
+    /* border: 1px solid #c2c2c2; */
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 10px !important;
+}

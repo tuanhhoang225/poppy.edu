@@ -1,0 +1,335 @@
+/* Have fun adding your style here :) - PS: At all times this file should contain a comment or a rule, otherwise opera might act buggy :( */
+
+/* General Custom CSS */
+
+
+
+
+/*
+Desktop Styles
+================================================== */
+/* Note: Add new css to the media query below that you want to only effect the desktop view of your site */
+
+@media only screen and (min-width: 768px) {
+  /* Add your Desktop Styles here */
+
+}
+
+
+
+/*
+Mobile Styles
+================================================== */
+/* Note: Add new css to the media query below that you want to only effect the Mobile and Tablet Portrait view */
+
+@media only screen and (max-width: 767px) {
+  /* Add your Mobile Styles here */
+
+}
+
+.sticky-popup {
+    width: 272px !important;
+}
+
+.left-bottom {
+    left: 0.5% !important;
+}
+
+body {
+    font-family: "sfu_futuralight";
+}
+label{
+    font-family: 'sfu_futura_book'!important;
+}
+.h2top{
+font-size: 2.2rem;
+color: #eae0a9!important;
+font-family: "UTMAvo";
+font-weight: normal;
+line-height: 1.1em!important;
+margin: 0;
+}
+.umt{
+    font-family: "UTMAvo" !important;
+    font-size: 2rem !important;
+    color: #98BD15 !important;
+    font-weight: normal;
+    line-height: 1.1em!important;
+}
+.umt1{
+    font-family: "UTMAvo" !important;
+    font-size: 2rem !important;
+    font-weight: normal;
+    line-height: 1.1em!important;
+}
+.style19{
+font-family: "UTMEssendineCaps" !important;
+}
+#top fieldset {
+   padding-left: 10px;
+}
+.dangky{
+   padding-left: 5px;
+}
+.utmb{
+    font-size: 1.24rem;
+    font-family: "UTMBryantLG"!important;
+}
+
+
+#hrb::before {
+    content: ""!important;
+    width: 100%!important;
+    height: 3px!important;
+    position: absolute!important;
+    top: 0;
+    left: 0;
+    background: -webkit-linear-gradient(left, rgba(175, 131, 57, 0.2) 0%, #ffeebd 40%, #ffeea9 53%, rgba(255, 238, 169, 0.2) 100%)!important;
+    background: -moz-linear-gradient(left, rgba(175, 131, 57, 0.2) 0%, #ffeebd 40%, #ffeea9 53%, rgba(255, 238, 169, 0.2) 100%)!important;
+    background: linear-gradient(to right, rgba(175, 131, 57, 0) 0%, #877864 30%, #e8d7ab 50%, rgba(135, 120, 100, 0.2) 80%, rgba(135, 120, 100, 0) 100%)!important;
+}
+
+nav::before{
+    content: ""!important;
+    width: 100%!important;
+    height: 1px!important;
+    position: absolute!important;
+    top: 0;
+    left: 0;
+    background: -webkit-linear-gradient(left, rgba(175, 131, 57, 0.2) 0%, #e1ab4e 40%, #ffeea9 53%, rgba(255, 238, 169, 0.2) 100%)!important;
+    background: -moz-linear-gradient(left, rgba(175, 131, 57, 0.2) 0%, #ffeebd 40%, #ffeea9 53%, rgba(255, 238, 169, 0.2) 100%)!important;
+    background: linear-gradient(to right, rgba(175, 131, 57, 0) 0%, #877864 30%, #e8d7ab 50%, rgba(135, 120, 100, 0.2) 80%, rgba(135, 120, 100, 0) 100%)!important;
+}
+
+
+.tab_counter_0{
+	color: #B2A672;
+    background: -webkit-linear-gradient(right, #2c3e50 0%, #2c3e50 35%, rgba(44, 62, 80, 0) 100%);
+    background: -moz-linear-gradient(right, #2c3e50 0%, #2c3e50 35%, rgba(44, 62, 80, 0) 100%);
+    background: linear-gradient(to left, #2c3e50 0%, #2c3e50 35%, rgba(44, 62, 80, 0) 100%);
+	font-size: 1.4rem;
+font-family: "UTMAvo";
+text-align: right;
+}
+
+.tab_counter_1{
+position: relative;
+text-align: left;
+color: #2c3e50!important;
+background:-webkit-linear-gradient(left, #ffeea9 0%, #ffeea9 35%, rgba(178, 166, 114, 0) 100%);
+}
+
+#top label {
+    font-size: 0.92em;
+    font-family: Helvetica;
+
+}
+
+.js_active .tab{
+	
+	font-size: 0.8rem;
+}
+
+.js_active .active_tab_content{	
+	border-width: 0px;
+
+}
+.tab{
+	width: 50%;
+	border: none !important;
+}
+
+#tr-easy-tabs-wrapper1 div.pws_tabs_container ul.pws_tabs_controll li a.pws_tab_active, #tr-easy-tabs-wrapper1 div.pws_tabs_list{
+	
+	border: none;
+}
+#tr-easy-tabs-wrapper2 div.pws_tabs_container ul.pws_tabs_controll li a.pws_tab_active, #tr-easy-tabs-wrapper2 div.pws_tabs_list{
+	
+	border: none;
+}
+#tr-easy-tabs-wrapper3 div.pws_tabs_container ul.pws_tabs_controll li a.pws_tab_active, #tr-easy-tabs-wrapper1 div.pws_tabs_list{
+	
+	border: none;
+}
+.pws_tabs_list{
+	border: none;
+}
+#tr-easy-tabs-wrapper1 div.pws_tabs_container ul.pws_tabs_controll li a::before{
+	
+	background:none!important;
+}
+
+#tr-easy-tabs-wrapper2 div.pws_tabs_container ul.pws_tabs_controll li a::before{
+	
+	background:none!important;
+}
+#tr-easy-tabs-wrapper3 div.pws_tabs_container ul.pws_tabs_controll li a::before{
+	
+	background:none!important;
+}
+
+
+#tr-easy-tabs-wrapper1 div.pws_tabs_container ul.pws_tabs_controll li a::before, #tr-easy-tabs-wrapper1 div.pws_tabs_container ul.pws_tabs_controll li a{
+	background:rgba(26, 14, 59, 0.1);
+	background-color: rgba(26, 14, 59, 0.1);
+}
+.pws_tabs_controll li a{
+	background: rgba(26, 14, 59, 0.1) !important;
+}
+.pws_tabs_controll{
+	text-align: center;
+}
+
+.pws_tabs_container ul.pws_tabs_controll li a {
+		background: rgba(26, 14, 59, 0.1);
+
+    color: #1A0E3B!important;
+}
+
+.pws_tabs_container ul.pws_tabs_controll li a {
+    padding: 4px 30px;
+    border-radius: 5px;
+}
+.pws_tabs_controll .pws_tab_active{
+	background: #ffeea9  !important;
+}
+.pws_tab_active {
+	background: #B2A672 !important;
+	background-color: #B2A672 !important;
+	
+}
+ul.pws_tabs_controll li a{
+		background: rgba(26, 14, 59, 0.1);
+}
+span.round {
+    font-size: 1rem;
+    background: #B2A672;
+    color: #1A0E3B;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 1.6em;
+    width: 1.6em;
+    height: 1.6em;
+    text-align: center;
+}
+span.no {
+    font-family: "UTMEssendineCaps" !important;
+    color: #ffeea9 !important;
+    text-align: center;
+    line-height: 1em;
+    font-size: 2rem;
+}
+
+#scroll-top-link:hover {
+    background-color: #e0d4a0;
+    color: #fff;
+    border: 1px solid #e1e1e1;
+}
+ #scroll-top-link {
+	 color: #fff;
+    background-color: #b2a672;
+}
+
+#top div .av-light-form input[type='text'],  #top div .av-light-form input[type='password'], #top div .av-light-form input[type='email'], #top div .av-light-form input[type='number'] {
+    background: #000 !important;
+    opacity: 0.4;
+}
+#top .av-custom-form-color .button {
+    color: white !important;
+    background-color: #b2a672 !important;
+    border: #ccc !important;
+    border: 2px solid;
+}
+
+.html5-video-player , .av-click-overlay, .avia-slide-wrap{
+    background-color: #2c3e50 !important;
+}
+
+@font-face {
+  font-family: "UTMAvo";
+  font-style: normal;
+  font-weight: normal;
+  src: url("UTMAvod41d.html?#iefix") format("embedded-opentype"), url("UTMAvo.woff") format("woff"), url("UTMAvo.html") format("truetype"), url("UTMAvo-2.html#UTMAvo") format("svg");
+}
+
+@font-face {
+  font-family: "UTMBryantLG";
+  font-style: normal;
+  font-weight: normal;
+  src: url("UTMBryantLGd41d.html?#iefix") format("embedded-opentype"), url("UTMBryantLG.woff") format("woff"), url("UTMBryantLG.html") format("truetype"), url("UTMBryantLG-2.html#UTMBryantLG") format("svg");
+}
+@font-face {
+  font-family: "UTMBryantLG";
+  font-style: normal;
+  font-weight: normal;
+  src: url("UTMBryantLGd41d.html?#iefix") format("embedded-opentype"), url("UTMBryantLG.woff") format("woff"), url("UTMBryantLG.html") format("truetype"), url("UTMBryantLG-2.html#UTMBryantLG") format("svg");
+}
+@font-face {
+  font-family: "UTMEssendineCaps";
+  font-style: normal;
+  font-weight: normal;
+  src: url("UTMEssendineCapsd41d.html?#iefix") format("embedded-opentype"), url("UTMEssendineCaps.woff") format("woff"), url("UTMEssendineCaps.html") format("truetype"), url("UTMEssendineCaps-2.html#UTMEssendineCaps") format("svg");
+}
+
+
+@font-face {
+  font-family: "sfu_futura_book";
+  font-style: normal;
+  font-weight: normal;
+  src: url("sfufuturabook-webfontd41d.html?#iefix") format("embedded-opentype"), url("sfufuturabook-webfont.html") format("woff2"), url("sfufuturabook-webfont-2.html") format("woff"), url("sfufuturabook-webfont-3.html") format("truetype"), url("sfufuturabook-webfont-4.html#sfu_futura_book") format("svg");
+}
+.text_input{
+  padding: 11px!important;
+border-radius: 4px 14px!important;
+
+}
+#info-scroll li {
+    display: block;
+    position: relative;
+    left: -113px;
+    float: none;
+    width: auto;
+    border-radius: 0 25px 25px 0;
+    margin-bottom: 2px;
+    background-color:#b2a672;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+margin-left: 20px;
+}
+
+#info-scroll li a {
+    display: block;
+    padding: 2px 2px 2px 12px;
+}
+a[href^="tel"] {
+    color: inherit;
+    text-decoration: none;
+}
+#info-scroll li {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+#info-scroll {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 9999999;
+}
+
+#info-scroll li .icon {
+    display: inline-block;
+    float: right;
+    width: 47px;
+    height: 47px;
+    margin: 1px 0 0 5px;
+}
+form label{
+color: #414e67;
+}
+.active_tab tab_counter_0{
+color: #ffeea9 !important;
+}

@@ -1,0 +1,16 @@
+﻿.caption-navigate {
+    color: #c29525;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.caption-navigate a {
+    color: #c29525;
+    font-weight: bold;
+}
+
+
+ol,ul{-webkit-padding-start: 0px !important; -moz-padding-start: 0px !important; -o-padding-start: 0px !important; -ms-padding-start: 0px !important; list-style:none !important;}
+.nav-auto ol{float:left;width:100%; }
+.nav-auto ol li{float:left; width:auto !important; display:inline-block !important;}
