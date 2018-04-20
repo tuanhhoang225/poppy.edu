@@ -37,7 +37,7 @@ class CourseController extends Controller
      */
     public function actionIndex()
     {
-        $courses = Course::find()->where(['=', 'status', '1'])->all();
+        $courses = Course::find()->all();
         return $this->render('index', [
             'courses' => $courses
         ]);
@@ -102,13 +102,30 @@ class CourseController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $teachers = TeacherCourse::find()->where(['=','course_id',$model->id])->one();
+        $images = Image::find()->where(['=', 'course_id', $id])->all();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post()) && $teachers->load(Yii::$app->request->post())) {
+            $model->save();
+            $teachers->save();
+            return $this->redirect(['index']);
+        }
+        foreach ($images as $key => $value) {
+            $value->delete();
         }
 
+        foreach (json_decode($model->images) as $key => $value) {
+            $image = new Image();
+
+            $image->avatar = $value;
+            $image->course_id = $id;
+
+            $image->save();
+        }
         return $this->render('update', [
             'model' => $model,
+            'teachers'=>$teachers,
+            'images' => $images
         ]);
     }
 

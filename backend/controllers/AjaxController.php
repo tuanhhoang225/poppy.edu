@@ -21,7 +21,7 @@ use yii\web\Controller;
 use common\models\PhotoLocation;
 use common\models\Setting;
 use common\models\Page;
-
+use common\models\Course;
 /**
  * AjaxController
  */
@@ -106,6 +106,9 @@ class AjaxController extends Controller
                     break;
                 case 'supporter':
                     $model = Supporter::findOne($post['id']);
+                    break;
+                case 'course':
+                    $model = Course::findOne($post['id']);
                     break;
                 default:
                     break;

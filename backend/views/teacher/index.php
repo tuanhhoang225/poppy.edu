@@ -5,12 +5,11 @@ use yii\grid\GridView;
 use yii\helpers\Url;
 use common\models\TeacherCourse;
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\base\TeacherSearch */
+/* @var $teachers common\models\Teacher */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('app', 'Teachers');
 $this->params['breadcrumbs'][] = $this->title;
-$courses
 ?>
 <div class="teacher-index">
 
@@ -78,7 +77,7 @@ $courses
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($teacher as $key => $value): ?>
+                            <?php foreach ($teachers as $key => $value): ?>
                                 <tr>
                                     <td style="padding-left: 15px;">
                                         <input title="" data-id="<?= $value['id'] ?>" type="checkbox" class="minimal">
@@ -87,7 +86,27 @@ $courses
                                         <?= $key + 1 ?>
                                     </td>
                                     <td>
+                                        <a data-toggle="modal" data-target="#myModal" data-title="content">
                                         <?= $value['name'] ?>
+                                        </a>
+                                        <div id="myModal" class="modal fade">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                        <h4 class="modal-title">Thông Tin Chi Tiết</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form role="form">
+                                                            <?= $value['content']?>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td>
                                         <?= $value['email'] ?>

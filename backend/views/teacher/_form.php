@@ -111,11 +111,11 @@ use yii\helpers\Url;
                         <?php if (isset($images)): foreach ($images as $key => $value): ?>
                             <div class="file-preview-frame krajee-default  kv-preview-thumb">
                                 <div class="kv-file-content">
-                                    <img src="<?= $value['anh_chinh'] ?>" class="kv-preview-data file-preview-image">
+                                    <img src="<?= $value['avatar'] ?>" class="kv-preview-data file-preview-image">
                                 </div>
                                 <div class="file-thumbnail-footer">
                                     <div class="file-footer-caption" title="kitchen_adventurer_lemon.jpg">
-                                        <?= $value['anh_chinh'] ?>
+                                        <?= $value['avatar'] ?>
                                     </div>
                                     <div class="file-upload-indicator" title="Not uploaded yet">
                                         <i class="glyphicon glyphicon-hand-down text-warning"></i>

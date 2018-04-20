@@ -73,6 +73,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <th><?= Yii::t('backend', 'Giảng viên') ?></th>
                                 <th><?= Yii::t('backend', 'Giá') ?></th>
                                 <th><?= Yii::t('backend', 'Thời gian') ?></th>
+                                <th><?= Yii::t('backend', 'Phát hành') ?></th>
                                 <th><?= Yii::t('backend', 'Action') ?></th>
                             </tr>
                             </thead>
@@ -86,16 +87,45 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <?= $key + 1 ?>
                                     </td>
                                     <td>
+                                        <a data-toggle="modal" data-target="#myModal" data-title="content">
                                         <?= $value['title'] ?>
+                                        </a>
+                                        <div id="myModal" class="modal fade">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                        <h4 class="modal-title">Thông Tin Khóa Học</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form role="form">
+                                                            <?= $value['content']?>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td>
-                                        <?= TeacherCourse::find()->where(['=','course_id',$value['id']])->one()['course_id']?>
+                                        <?= TeacherCourse::find()->where(['=','course_id',$value['id']])->one()['teacher_id']?>
                                     </td>
                                     <td>
                                         <?= $value['price'] ?>
                                     </td>
                                     <td>
                                         <?= $value['duration'] ?>
+                                    </td>
+                                    <td>
+                                        <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-mini"
+                                             style="border:none">
+                                            <input data-id="<?= $value['id'] ?>" data-api="ajax/enable-column"
+                                                   data-table="course" data-column="status"
+                                                   type="checkbox" <?= $value['status'] ? 'checked="checked"' : '' ?>
+                                                   title="" name="switch-checkbox">
+                                        </div>
                                     </td>
                                     <td>
                                         <a href="<?= Url::to(['course/update', 'id' => $value['id']]) ?>">

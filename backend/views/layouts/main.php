@@ -256,13 +256,13 @@ function findModel($id)
                     </li>
                     <li>
                         <a href="<?= Url::to(['course/index']) ?>">
-                            <i class="fa fa-comments-o"></i><span>Quản lý khóa học</span>
+                            <i class="fa fa-book"></i><span>Quản lý khóa học</span>
                             <span class="pull-right-container"></span>
                         </a>
                     </li>
                     <li>
                         <a href="<?= Url::to(['teacher/index']) ?>">
-                            <i class="fa fa-comments-o"></i><span>Quản lý giáo viên</span>
+                            <i class="fa fa-id-badge"></i><span>Quản lý giáo viên</span>
                             <span class="pull-right-container"></span>
                         </a>
                     </li>

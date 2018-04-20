@@ -7,6 +7,7 @@ use yii\helpers\ArrayHelper;
 use common\helpers\FunctionHelper;
 use common\models\Category;
 use common\models\Teacher;
+
 /* @var $this yii\web\View */
 /* @var $model common\models\Course */
 /* @var $teachers common\models\TeacherCourse */
@@ -52,7 +53,7 @@ use common\models\Teacher;
                         <div class="col-md-6">
                             <div class="form-group">
                                 <?= $form->field($model, 'category_id')->dropDownList(
-                                    ArrayHelper::map(Category::find()->where(['!=', 'status','1'])->all(), 'id', 'title'),
+                                    ArrayHelper::map(Category::find()->where(['!=', 'status', '1'])->all(), 'id', 'title'),
                                     [
                                         'prompt' => Yii::t('backend', '-- Chọn category --'),
                                         'id' => 'categories'
@@ -102,9 +103,17 @@ use common\models\Teacher;
                         </div>
 
                     </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <?= $form->field($model, 'status')->checkbox(['class' => 'minimal none-action'])->label(false) ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="col-md-12">
             <div class="box box-info">
                 <div class="box-header">
@@ -151,11 +160,11 @@ use common\models\Teacher;
                         <?php if (isset($images)): foreach ($images as $key => $value): ?>
                             <div class="file-preview-frame krajee-default  kv-preview-thumb">
                                 <div class="kv-file-content">
-                                    <img src="<?= $value['anh_chinh'] ?>" class="kv-preview-data file-preview-image">
+                                    <img src="<?= $value['avatar'] ?>" class="kv-preview-data file-preview-image">
                                 </div>
                                 <div class="file-thumbnail-footer">
                                     <div class="file-footer-caption" title="kitchen_adventurer_lemon.jpg">
-                                        <?= $value['anh_chinh'] ?>
+                                        <?= $value['avatar'] ?>
                                     </div>
                                     <div class="file-upload-indicator" title="Not uploaded yet">
                                         <i class="glyphicon glyphicon-hand-down text-warning"></i>

@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Teacher */
+/* @var $images common\models\Image */
 
 $this->title = Yii::t('app', 'Update Teacher: ' . $model->name, [
     'nameAttribute' => '' . $model->name,
@@ -18,6 +19,8 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 
     <?= $this->render('_form', [
         'model' => $model,
+        'images'=>$images
+
     ]) ?>
 
 </div>

@@ -39,7 +39,7 @@ class TeacherController extends Controller
 
         $teachers = Teacher::find()->all();
         return $this->render('index', [
-            'teacher'=>$teachers,
+            'teachers'=>$teachers,
         ]);
     }
 
@@ -100,13 +100,28 @@ class TeacherController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $images = Image::find()->where(['=', 'teacher_id', $id])->all();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())  ) {
+            foreach ($images as $key => $value) {
+                $value->delete();
+            }
+
+            foreach (json_decode($model->images) as $key => $value) {
+                $image = new Image();
+
+                $image->avatar = $value;
+                $image->teacher_id = $id;
+
+                $image->save();
+            }
+            $model->save();
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [
             'model' => $model,
+            'images'=>$images
         ]);
     }
 
