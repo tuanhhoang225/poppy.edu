@@ -8,7 +8,9 @@ use common\models\base\CourseSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use common\models\TeacherCourse;
+use common\models\Image;
+use common\helpers\FunctionHelper;
 /**
  * CourseController implements the CRUD actions for Course model.
  */
@@ -35,12 +37,9 @@ class CourseController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CourseSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        $courses = Course::find()->where(['=', 'status', '1'])->all();
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'courses' => $courses
         ]);
     }
 
@@ -65,13 +64,31 @@ class CourseController extends Controller
     public function actionCreate()
     {
         $model = new Course();
+        $teachers = new TeacherCourse();
+        if ($model->load(Yii::$app->request->post()) && $teachers->load(Yii::$app->request->post())) {
+            if ($model->save()) {
+                foreach (json_decode($model->images) as $key => $value) {
+                    if ($key == 0) {
+                        $model->avatar = $value;
+                    }
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+                    $img = new Image();
+                    $img->avatar = $value;
+                    $img->teacher_id = $model->id;
+                    $img->save();
+                }
+
+                $model->slug = FunctionHelper::slug($model->title) . '=' . $model->id;
+                $model->save();
+                $teachers->course_id = $model->id;
+                $teachers->save();
+                return $this->redirect(['index']);
+            }
         }
 
         return $this->render('create', [
             'model' => $model,
+            'teachers'=>$teachers
         ]);
     }
 

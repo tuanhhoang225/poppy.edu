@@ -108,7 +108,7 @@ use yii\helpers\Url;
                         </div>
                     </div>
                     <div id="list-img" class="thumbnails ui-sortable">
-                        <?php if (isset($image)): foreach ($image as $key => $value): ?>
+                        <?php if (isset($images)): foreach ($images as $key => $value): ?>
                             <div class="file-preview-frame krajee-default  kv-preview-thumb">
                                 <div class="kv-file-content">
                                     <img src="<?= $value['anh_chinh'] ?>" class="kv-preview-data file-preview-image">

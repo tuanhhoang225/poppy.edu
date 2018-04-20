@@ -28,8 +28,10 @@ class m180418_033433_create_course_table extends Migration
             'study_time'=>$this->string(),
             'category_id'=>$this->integer(),
             'avatar'=>$this->string(),
-            'image'=>$this->text(),
+            'images'=>$this->text(),
             'address'=>$this->string(),
+            'slug'=>$this->string(),
+            'status'=>$this->integer()->defaultValue(0)
 
         ],$tableOptions);
         $this->addForeignKey('fk_course_category','course','category_id','category','id','CASCADE');

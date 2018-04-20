@@ -17,12 +17,13 @@ use Yii;
  * @property string $study_time
  * @property int $category_id
  * @property string $avatar
- * @property string $image
+ * @property string $images
  * @property string $address
  * @property int $status
  *
  * @property Comment[] $comments
  * @property Category $category
+ * @property Image[] $images0
  * @property TeacherCourse[] $teacherCourses
  */
 class Course extends \yii\db\ActiveRecord
@@ -42,7 +43,7 @@ class Course extends \yii\db\ActiveRecord
     {
         return [
             [['title'], 'required'],
-            [['content', 'image'], 'string'],
+            [['content', 'images'], 'string'],
             [['price', 'total_student', 'category_id', 'status'], 'integer'],
             [['start_date'], 'safe'],
             [['title', 'duration', 'study_time', 'avatar', 'address'], 'string', 'max' => 255],
@@ -66,7 +67,7 @@ class Course extends \yii\db\ActiveRecord
             'study_time' => Yii::t('app', 'Study Time'),
             'category_id' => Yii::t('app', 'Category ID'),
             'avatar' => Yii::t('app', 'Avatar'),
-            'image' => Yii::t('app', 'Image'),
+            'images' => Yii::t('app', 'Images'),
             'address' => Yii::t('app', 'Address'),
             'status' => Yii::t('app', 'Status'),
         ];
@@ -86,6 +87,14 @@ class Course extends \yii\db\ActiveRecord
     public function getCategory()
     {
         return $this->hasOne(Category::className(), ['id' => 'category_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImages0()
+    {
+        return $this->hasMany(Image::className(), ['course_id' => 'id']);
     }
 
     /**
