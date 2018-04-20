@@ -5,12 +5,11 @@ use yii\grid\GridView;
 use yii\helpers\Url;
 use common\models\TeacherCourse;
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\base\TeacherSearch */
+/* @var $teachers common\models\Teacher */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('app', 'Teachers');
 $this->params['breadcrumbs'][] = $this->title;
-$courses
 ?>
 <div class="teacher-index">
 
@@ -78,7 +77,7 @@ $courses
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($teacher as $key => $value): ?>
+                            <?php foreach ($teachers as $key => $value): ?>
                                 <tr>
                                     <td style="padding-left: 15px;">
                                         <input title="" data-id="<?= $value['id'] ?>" type="checkbox" class="minimal">

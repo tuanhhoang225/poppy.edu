@@ -267,7 +267,7 @@ function findModel($id)
                         </a>
                     </li>
                     <li>
-                        <a href="<?= Url::to(['teacher/index']) ?>">
+                        <a href="<?= Url::to(['student/index']) ?>">
                             <i class="fa fa-comments-o"></i><span>Quản lý học viên</span>
                             <span class="pull-right-container"></span>
                         </a>

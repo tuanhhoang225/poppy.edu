@@ -39,7 +39,7 @@ class TeacherController extends Controller
 
         $teachers = Teacher::find()->all();
         return $this->render('index', [
-            'teacher'=>$teachers,
+            'teachers'=>$teachers,
         ]);
     }
 
