@@ -35,10 +35,11 @@ class StudentController extends Controller
      */
     public function actionIndex()
     {
+        $students = User::find()->where(['=','permission',3])->all();
 
 
         return $this->render('index', [
-
+            'students'=>$students
         ]);
     }
 

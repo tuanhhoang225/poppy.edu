@@ -243,14 +243,8 @@ function findModel($id)
                         </a>
                     </li>
                     <li>
-                        <a href="<?= Url::to(['contact/index']) ?>">
+                        <a href="<?= Url::to(['student/index']) ?>">
                             <i class="fa fa-group"></i><span>Quản lý thành viên</span>
-                            <span class="pull-right-container"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= Url::to(['contact/index']) ?>">
-                            <i class="fa fa-comments-o"></i><span>Quản lý liên hệ</span>
                             <span class="pull-right-container"></span>
                         </a>
                     </li>

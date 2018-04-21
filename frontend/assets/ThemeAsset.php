@@ -13,32 +13,25 @@ class ThemeAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'theme/css/bootstrap.css',
-        'theme/css/Reset.css',
-        'theme/css/Layout1.css',
-        'theme/css/Site.css',
-        'theme/css/fixbugs.css',
-        'theme/css/Style.css',
-        'theme/css/WebResource0ecd.css',
-        'theme/css/WebResource2ee9.css',
-        'theme/css/WebResource351e.css',
-        'theme/css/WebResource798d.css',
-        'theme/css/WebResource4002.css',
-        'theme/css/WebResourcea955.css',
-        'theme/css/WebResourcecca9.css',
-        'theme/css/owl.carousel.css',
-        'theme/css/owl.theme.default.css',
-        'theme/css/pro-folio.css',
-        'theme/css/slick.css',
-        'css/site.css',
-        'theme/css/NavPath.css',
-        'theme/css/Article.css',
-        'theme/css/style-menu-left.css',
-        'theme/css/Contact.css'
+        'theme/css/jquery-ui.min.css',
+        'theme/css/animate.css',
+        'theme/css/css-plugin-collections.css',
+        'theme/css/menuzord-skins/menuzord-rounded-boxed.css',
+        'theme/css/style-main.css',
+        'theme/css/preloader.css',
+        'theme/css/custom-bootstrap-margin-padding.css',
+        'theme/css/responsive.css',
+        'theme/js/revolution-slider/css/settings.css',
+        'theme/js/revolution-slider/css/layers.css',
+        'theme/js/revolution-slider/css/navigation.css',
+        'theme/css/colors/theme-skin-color-set-1.css',
     ];
     public $js = [
-        'theme/js/owl.carousel.js',
+        'js/jquery-2.2.4.min.js',
+        'js/jquery-ui.min.js',
         'js/bootstrap.min.js',
-        'js/setting.js'
+        'theme/js/revolution-slider/js/jquery.themepunch.tools.min.js',
+        'theme/js/revolution-slider/js/jquery.themepunch.revolution.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

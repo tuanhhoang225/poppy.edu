@@ -8,80 +8,133 @@
 
 use yii\helpers\Url;
 use common\helpers\FunctionHelper;
-
+use frontend\assets\ThemeAsset;
+ThemeAsset::register($this);
 ?>
 
-<header id='header'
-        class=' header_color light_bg_color  av_header_top av_logo_center av_bottom_nav_header av_menu_right av_slim av_header_sticky av_header_shrinking av_header_stretch av_mobile_menu_phone av_header_transparency av_header_searchicon_disabled av_header_unstick_top av_alternate_logo_active av_header_border_disabled'
-        role="banner" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
-
-    <a id="advanced_menu_toggle" href="#" aria-hidden='true' data-av_icon=''
-       data-av_iconfont='entypo-fontello'></a><a id="advanced_menu_hide" href="#" aria-hidden='true'
-                                                 data-av_icon='' data-av_iconfont='entypo-fontello'></a>
-    <div id='header_main' class='container_wrap container_wrap_logo'>
-
-        <div class='container av-logo-container'>
-            <div class='inner-container'><strong class='logo'><a href='<?= Url::to(['site/index'])?>'>
-                        <img height='100' width='300'
-                             src='<?= FunctionHelper::get_images_by_photo_location_key('logo', '1')['avatar'] ?>'
-                             alt='Roman Plaza'/><span
-                                class='subtext'><img src='wp-content/uploads/2017/09/logo.png' class='alternate'
-                                                     alt=''/></span></a></strong></div>
-        </div>
-        <div id='header_main_alternate' class='container_wrap'>
-            <div class='container'>
-                <nav class='main_menu' data-selectname='Chọn trang' role="navigation" itemscope="itemscope"
-                     itemtype="https://schema.org/SiteNavigationElement">
-                    <div class="avia-menu av-main-nav-wrap">
-                        <ul id="avia-menu" class="menu av-main-nav">
-
-
-                            <?php $imenu = 0; ?>
-                            <?php foreach (FunctionHelper::get_categories_by_parent_id(null) as $key_menu => $value_menu): $imenu++; ?>
-
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-home menu-item-top-level
-                                menu-item-top-level-<?= $imenu ?>">
-
-
-                                    <?php
-                                    if ($value_menu['page_id'] == 2) {
-                                        ?>
-                                        <a href="<?= Url::to(['site/index']) . '#menu-item-' . $imenu ?>"
-                                           itemprop="url"><span
-                                                    class="avia-bullet"></span>
-                                            <span class="avia-menu-text"><?= $value_menu['title'] ?> </span>
-                                            <span class="avia-menu-fx"><span class="avia-arrow-wrap"><span
-                                                            class="avia-arrow"></span></span>
-                                                </span>
-                                        </a>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <a href=" <?= Url::to(['site/view', 'category_slug' => $value_menu['slug']]) ?> "
-                                           itemprop="url"><span class="avia-bullet"></span>
-                                            <span class="avia-menu-text"><?= $value_menu['title'] ?> </span>
-                                            <span class="avia-menu-fx"><span class="avia-arrow-wrap"><span
-                                                            class="avia-arrow"></span></span>
-                                        </span>
-                                        </a>
-                                        <?php
-                                    }
-
-                                    ?>
-
-
-                                </li>
-
-                            <?php endforeach; ?>
+<header id="header" class="header">
+    <div class="header-top bg-theme-color-2 sm-text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="widget no-border m-0">
+                        <ul class="list-inline">
+                            <li class="m-0 pl-10 pr-10"><i class="fa fa-phone text-white"></i> <a class="text-white"
+                                                                                                  href="#">123-456-789</a>
+                            </li>
+                            <li class="text-white m-0 pl-10 pr-10"><i class="fa fa-clock-o text-white"></i> Mon-Fri
+                                8:00 to 2:00
+                            </li>
+                            <li class="m-0 pl-10 pr-10"><i class="fa fa-envelope-o text-white"></i> <a
+                                        class="text-white" href="#">contact@yourdomain.com</a></li>
                         </ul>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="widget no-border m-0">
+                        <ul class="list-inline text-right sm-text-center">
+                            <li>
+                                <a href="#" class="text-white">FAQ</a>
+                            </li>
+                            <li class="text-white">|</li>
+                            <li>
+                                <a href="#" class="text-white">Help Desk</a>
+                            </li>
+                            <li class="text-white">|</li>
+                            <li>
+                                <a href="#" class="text-white">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-nav">
+        <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
+            <div class="container">
+                <nav id="menuzord-right" class="menuzord default">
+                    <a class="menuzord-brand pull-left flip" style="margin-top: 7px" href="javascript:void(0)">
+                        <img src="images/img/logo1-1.png" alt="">
+                    </a>
+                    <ul class="menuzord-menu">
+                        <li class="active"><a href="#home">Trang chủ</a>
+
+                        </li>
+                        <li><a href="#">Khóa học</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Tiếng anh trẻ em</a>
+                                    <ul class="dropdown">
+                                        <li><a href="features-header-style1.html">Tiếng anh mầm non</a></li>
+                                        <li><a href="features-header-style2.html">Tiếng anh tiểu học</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Tiếng anh trung học</a>
+                                    <ul class="dropdown">
+                                        <li><a href="features-page-title-text-left.html">Tiếng anh trung học cơ
+                                                sở</a></li>
+                                        <li><a href="features-page-title-text-center.html">Tiếng anh trung học phổ
+                                                thông</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Tiếng anh giao tiếp</a>
+                                    <ul class="dropdown">
+                                        <li><a href="features-side-push-panel-left-overlay.html">Beginer</a></li>
+                                        <li><a href="features-side-push-panel-left-push.html">Intermediate</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Luyện thi IELTS</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Fre IELTS 3.5+</a>
+                                        </li>
+                                        <li><a href="features-home-bg-image-slider.html">IELTS Foundation 5.5+</a>
+                                        </li>
+                                        <li><a href="features-home-owl-fullwidth-carousel.html">IELTS Intermediate
+                                                6.0+</a></li>
+                                        <li><a href="features-home-parallax-bg.html">Static/Parallax Image Bg</a>
+                                        </li>
+                                        <li><a href="features-home-video-bg.html">Video Image Bg</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Khóa học ngắn hạn</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Thuyết trình</a>
+                                        </li>
+                                        <li><a href="#">Ngữ pháp</a>
+                                        </li>
+                                        <li><a href="#">Giao tiếp</a>
+                                        </li>
+                                        <li><a href="#">Tiếng anh học thuật</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Tiếng anh theo yêu cầu <span class="label label-success">New</span></a>
+                                </li>
+                                <li><a href="#">Tiếng anh one to one</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Giáo viên</a>
+
+                        </li>
+                        <li><a href="#">Tin tức</a>
+
+                        </li>
+                        <li><a href="#home">Về chúng tôi</a>
+
+                        </li>
+                        <li><a href="#home">Liên hệ</a>
+
+                        </li>
+                        <li><a href="#">Thư viện ảnh</a>
+
+                        </li>
+                        <li><a href="#" data-toggle="modal" data-target="#dangky">Đăng ký</a> </li>
+                        <li><a href="#" data-toggle="modal" data-target="#dangnhap">Đăng nhập</a> </li>
+                    </ul>
                 </nav>
             </div>
         </div>
-        <!-- end container_wrap-->
     </div>
 
-    <div class='header_bg'></div>
-
-    <!-- end header -->
 </header>
